@@ -23,9 +23,10 @@ class mvtest:
     def _f(self, s, x):
         return len(x[x <= s]) / self._n
 
-    def _fr(self, s, t, x, y):
+    def _fr(self, s, t, x, y): # P(X|Y)
         return len(x[(x <= s) & (y == t)]) / len(y[y == t])
 
+    # t为y的一种属性值，返回该属性值的比例
     def _pr(self, t, y):
         return len(y[y == t]) / self._n
 
